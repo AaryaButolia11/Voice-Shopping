@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2E6B4A" />
+    <title>Speaklist — Voice Shopping Assistant</title>
+    <meta
+      name="description"
+      content="Build your shopping list by voice. Add, remove, search and organise groceries just by speaking — with smart, seasonal and substitute suggestions."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ================= LANDING ================= -->
+    <div id="view-landing" class="view">
+      <nav class="nav">
+        <a class="brand" href="#/" data-nav>
+          <span class="brand-mark" aria-hidden="true">🥬</span>
+          <span class="brand-name">Speaklist</span>
+        </a>
+        <div class="nav-links">
+          <a href="#features">Features</a>
+          <a href="#how">How it works</a>
+        </div>
+        <div class="nav-actions">
+          <button class="icon-btn" id="theme-toggle-landing" aria-label="Toggle theme" title="Toggle dark / light">
+            <span class="theme-icon" aria-hidden="true">🌙</span>
+          </button>
+          <button class="btn btn-ghost" data-auth-open>Sign in</button>
+          <a class="btn btn-primary" href="#/app" data-nav>Open app</a>
+        </div>
+      </nav>
+
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Voice-first shopping list</p>
+          <h1 class="hero-title">Say it.<br />It’s on the list.</h1>
+          <p class="hero-sub">
+            Add groceries, set quantities, search by price and get smart
+            suggestions — all by talking. No typing required, in ten languages.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary btn-lg" href="#/app" data-nav>Start shopping</a>
+            <a class="btn btn-outline btn-lg" href="#how">See how it works</a>
+          </div>
+          <p class="hero-note">Works in your browser. No install.</p>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="demo-orb">
+            <span class="demo-ring"></span>
+            <span class="demo-ring"></span>
+            <span class="demo-core">🎙️</span>
+          </div>
+          <div class="demo-card">
+            <p class="demo-said">“add two avocados and a loaf of bread”</p>
+            <div class="demo-rows">
+              <div class="demo-row"><span>🥬 Avocados</span><span class="demo-q">×2</span></div>
+              <div class="demo-row"><span>🍞 Bread</span><span class="demo-q">loaf</span></div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section id="features" class="features">
+        <h2 class="section-title">Everything a list should do — hands-free</h2>
+        <div class="feature-grid">
+          <article class="feature">
+            <span class="feature-icon">🎙️</span>
+            <h3>Voice &amp; natural language</h3>
+            <p>“I want to buy bananas”, “add milk and eggs”, “buy 5 oranges” — varied phrasing just works, in ten languages.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon">💡</span>
+            <h3>Smart suggestions</h3>
+            <p>Reminders from your history, produce that’s in season this month, and substitutes like oat milk for milk.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon">🗂️</span>
+            <h3>Auto-organised</h3>
+            <p>Items sort themselves into produce, dairy, pantry and more. Set quantities and check things off as you shop.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon">🔎</span>
+            <h3>Voice search</h3>
+            <p>“Find organic apples under $5” or “toothpaste under $5” — search the catalogue by brand, size and price.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="how" class="how">
+        <h2 class="section-title">Three steps, one breath</h2>
+        <ol class="steps">
+          <li>
+            <span class="step-num">01</span>
+            <h3>Speak</h3>
+            <p>Tap the mic and talk. Your words appear live as you say them.</p>
+          </li>
+          <li>
+            <span class="step-num">02</span>
+            <h3>Understand</h3>
+            <p>Your phrase becomes an action — add, remove, update or search — with item, quantity and category.</p>
+          </li>
+          <li>
+            <span class="step-num">03</span>
+            <h3>Done</h3>
+            <p>Your list updates instantly, grouped by aisle, with a confirmation you can see.</p>
+          </li>
+        </ol>
+        <div class="how-cta">
+          <a class="btn btn-primary btn-lg" href="#/app" data-nav>Try it now</a>
+        </div>
+      </section>
+
+      <footer class="landing-footer">
+        <span class="brand-mark" aria-hidden="true">🥬</span>
+        <p>Speaklist — a voice command shopping assistant.</p>
+      </footer>
+    </div>
+
+    <!-- ================= APP ================= -->
+    <div id="view-app" class="view app" hidden>
+      <header class="topbar">
+        <a class="brand" href="#/" data-nav>
+          <span class="brand-mark" aria-hidden="true">🥬</span>
+          <div class="brand-text">
+            <span class="brand-name">Speaklist</span>
+            <span class="brand-tag">Voice shopping list</span>
+          </div>
+        </a>
+
+        <div class="topbar-controls">
+          <div class="lang-field">
+            <label for="lang-select" class="visually-hidden">Voice language</label>
+            <select id="lang-select" class="lang-select" title="Voice language">
+              <option value="en-US">English (US)</option>
+              <option value="en-GB">English (UK)</option>
+              <option value="es-ES">Español</option>
+              <option value="fr-FR">Français</option>
+              <option value="de-DE">Deutsch</option>
+              <option value="it-IT">Italiano</option>
+              <option value="pt-BR">Português (BR)</option>
+              <option value="hi-IN">हिन्दी</option>
+              <option value="ja-JP">日本語</option>
+              <option value="zh-CN">中文</option>
+            </select>
+          </div>
+          <button id="theme-toggle" class="icon-btn" title="Toggle dark / light" aria-label="Toggle theme">
+            <span class="theme-icon" aria-hidden="true">🌙</span>
+          </button>
+          <span id="engine-dot" class="engine-dot" title="Checking service…" aria-live="polite"></span>
+          <button class="btn btn-ghost" id="auth-btn" data-auth-open>Sign in</button>
+        </div>
+      </header>
+
+      <main class="stage">
+        <section class="voice" aria-label="Voice command">
+          <button id="mic-btn" class="orb" aria-label="Start listening" aria-pressed="false">
+            <span class="orb-ring" aria-hidden="true"></span>
+            <span class="orb-ring" aria-hidden="true"></span>
+            <span class="orb-ring" aria-hidden="true"></span>
+            <span class="orb-core"><span class="orb-icon" aria-hidden="true">🎙️</span></span>
+          </button>
+
+          <p id="orb-status" class="orb-status">Tap to speak</p>
+
+          <div class="feedback" aria-live="polite">
+            <p id="transcript" class="transcript is-empty">Say something like “add two avocados”</p>
+            <p id="reply" class="reply"></p>
+          </div>
+
+          <ul class="examples" id="examples" aria-label="Example commands">
+            <li><button class="chip" data-cmd="Add milk and a dozen eggs">“Add milk and a dozen eggs”</button></li>
+            <li><button class="chip" data-cmd="I need 2 bottles of sparkling water">“I need 2 bottles of sparkling water”</button></li>
+            <li><button class="chip" data-cmd="Find organic apples under 5 dollars">“Find organic apples under $5”</button></li>
+            <li><button class="chip" data-cmd="Remove bread from my list">“Remove bread from my list”</button></li>
+          </ul>
+
+          <form id="command-form" class="command-form">
+            <input
+              id="command-input"
+              class="command-input"
+              type="text"
+              autocomplete="off"
+              placeholder="Or type a command, e.g. “add 3 bananas”"
+              aria-label="Type a command"
+            />
+            <button type="submit" id="command-send" class="send-btn">Send</button>
+          </form>
+          <p id="speech-note" class="speech-note is-hidden"></p>
+        </section>
+
+        <div class="columns">
+          <section class="panel list-panel" aria-label="Shopping list">
+            <div class="panel-head">
+              <h2 class="panel-title">Your list</h2>
+              <div class="panel-head-right">
+                <span id="list-progress" class="progress"></span>
+                <button id="order-btn" class="ghost-btn ghost-accent" hidden>Create order</button>
+                <button id="clear-btn" class="ghost-btn" hidden>Clear all</button>
+              </div>
+            </div>
+            <div id="list-body" class="list-body">
+              <p class="loading">Loading your list…</p>
+            </div>
+            <div id="list-empty" class="empty is-hidden">
+              <p class="empty-title">Nothing here yet</p>
+              <p class="empty-sub">Tap the mic or type a command to add your first item.</p>
+            </div>
+          </section>
+
+          <aside class="side">
+            <section class="panel" aria-label="Suggestions">
+              <div class="panel-head"><h2 class="panel-title">Suggestions</h2></div>
+              <div id="suggestions-body" class="suggestions-body">
+                <p class="loading">Thinking of ideas…</p>
+              </div>
+            </section>
+
+            <section id="search-panel" class="panel is-hidden" aria-label="Search results">
+              <div class="panel-head">
+                <h2 class="panel-title">Search results</h2>
+                <button id="search-close" class="ghost-btn">Hide</button>
+              </div>
+              <div id="search-body" class="search-body"></div>
+            </section>
+          </aside>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>Speak or type — add, remove, update quantities, and search by price or brand.</p>
+      </footer>
+    </div>
+
+    <!-- ================= AUTH MODAL ================= -->
+    <div id="auth-modal" class="modal is-hidden" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+      <div class="modal-card">
+        <button class="modal-close" data-auth-close aria-label="Close">&times;</button>
+
+        <div id="login-pane">
+          <h2 class="modal-title" id="auth-title">Welcome back</h2>
+          <p class="modal-sub">Sign in to save orders and download invoices.</p>
+          <form id="login-form" class="auth-form">
+            <label class="field">
+              <span>Email</span>
+              <input type="email" id="login-email" required placeholder="you@example.com" />
+            </label>
+            <label class="field">
+              <span>Password</span>
+              <input type="password" id="login-password" required placeholder="••••••••" />
+            </label>
+            <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+          </form>
+          <p class="auth-toggle">No account? <button type="button" class="link-btn" data-show="register">Create one</button></p>
+        </div>
+
+        <div id="register-pane" class="is-hidden">
+          <h2 class="modal-title">Create account</h2>
+          <p class="modal-sub">It takes a few seconds. Your list stays as-is.</p>
+          <form id="register-form" class="auth-form">
+            <label class="field">
+              <span>Full name</span>
+              <input type="text" id="register-name" required placeholder="Jane Doe" />
+            </label>
+            <label class="field">
+              <span>Email</span>
+              <input type="email" id="register-email" required placeholder="you@example.com" />
+            </label>
+            <label class="field">
+              <span>Password</span>
+              <input type="password" id="register-password" required minlength="8" placeholder="At least 8 characters" />
+            </label>
+            <button type="submit" class="btn btn-primary btn-block">Create account</button>
+          </form>
+          <p class="auth-toggle">Already have one? <button type="button" class="link-btn" data-show="login">Sign in</button></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= CHECKOUT MODAL ================= -->
+    <div id="checkout-modal" class="modal is-hidden" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+      <div class="modal-card">
+        <button class="modal-close" data-checkout-close aria-label="Close">&times;</button>
+        <h2 class="modal-title" id="checkout-title">Review your order</h2>
+        <p class="modal-sub">Prices are matched from the catalogue. This creates an invoice you can download.</p>
+        <div id="checkout-items" class="checkout-items"></div>
+        <div class="checkout-total">
+          <span>Estimated total</span>
+          <strong id="checkout-total">$0.00</strong>
+        </div>
+        <button id="place-order-btn" class="btn btn-primary btn-block">Place order</button>
+      </div>
+    </div>
+
+    <!-- ================= CONFIRMATION MODAL ================= -->
+    <div id="confirm-modal" class="modal is-hidden" role="dialog" aria-modal="true" aria-labelledby="confirm-title">
+      <div class="modal-card confirm-card">
+        <div class="confirm-icon">✓</div>
+        <h2 class="modal-title" id="confirm-title">Order confirmed</h2>
+        <p class="modal-sub">Order <strong id="confirm-order-id">#000000</strong> is ready.</p>
+        <button id="download-invoice-btn" class="btn btn-primary btn-block">Download invoice (PDF)</button>
+        <button id="confirm-close-btn" class="btn btn-outline btn-block">Keep shopping</button>
+      </div>
+    </div>
+
+    <div id="toasts" class="toasts" aria-live="polite" aria-atomic="false"></div>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+# Render Blueprint — provisions the backend web service + a Postgres database.
+# The FastAPI service also serves the frontend (single-service deploy), so this
+# one file is all you need. Push to GitHub, then "New > Blueprint" on Render.
+
+databases:
+  - name: shopping-db
+    plan: free
+    databaseName: shopping
+    user: shopping
+
+services:
+  - type: web
+    name: voice-shopping-assistant
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: shopping-db
+          property: connectionString
+      - key: GROQ_API_KEY
+        sync: false        # set this in the Render dashboard (free key from console.groq.com)
+      - key: GROQ_MODEL
+        value: llama-3.3-70b-versatile
+      - key: ALLOWED_ORIGINS
+        value: "*"
