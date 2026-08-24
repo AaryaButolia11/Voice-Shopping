@@ -3,6 +3,7 @@
 > A voice-first shopping assistant that converts natural language commands into an intelligent, organized shopping list.
 
 🔗 **Live Demo:** https://voice-shopping-assistant-hqho.onrender.com/
+
 🔗 **GitHub:** https://github.com/AaryaButolia11/Voice-Shopping
 
 ---
