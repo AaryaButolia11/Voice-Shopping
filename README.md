@@ -1,6 +1,3 @@
-Conversation with Gemini
-give code of readme.md format
-
 # 🥬 Speaklist — Voice Command Shopping Assistant
 
 
